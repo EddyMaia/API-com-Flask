@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link  rel="stylesheet" href="{{ url_for('static', filename='CSS_paginaCadastro.css')}}">
+    </head>
+    <body>
+        <form action="http://127.0.0.1:5000/CadastroRealizado"  method ="post" enctype="multipart/form-data"> 
+            <div>
+                <label for="nome"> Nome </label>
+            </div>
+            <div class="input">
+                <input type="text" name="nome" id="nome" class="campo" required>
+            </div>
+            <div>
+                <label for="email"> E-mail  </label>
+            </div>
+            <div class="input">
+                <input type="email" name="email" id="email" class="campo" required>
+            </div>
+            <div> 
+                <label for= "telefone"> Telefone </label>
+            </div>
+            <div class="input">
+                <input type="tel" name="telefone" id="telefone" class="campo" required>
+            </div>
+            <div> 
+                <label for="endereco"> Endereço </label>
+            </div>
+            <div class="input">
+                <input type="text" name="endereco" id="endereco" class="campo" required>
+            </div>
+            <div>
+                <label for="profissao"> Profissão </label>
+            </div>
+            <div class="input">
+                <input type="text" name="profissao" id="profissao" class="campo" required>
+            </div>
+            <div>
+                <label for="documento"> Curriculo </label> 
+            </div>
+            <div>
+                <input type='file' id="documento" name="documento"  accept=".pdf, .doc, .docx"></input>
+                <br>
+                <br>
+                <button type="submit" class="botao">Enviar dados </button>
+                <button type="reset" class= "botao"> Redefinir </button>
+            </div>
+
+
+        </form>
+        <br>
+        <a href="http://127.0.0.1:5000/"> Voltar a página inicial         </a>
+    </body>
+</html>

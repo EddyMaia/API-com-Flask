@@ -1,0 +1,31 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    background-color:#46FA8D;
+    margin-left: 03%;
+    margin-top: 2%;
+    justify-content:center;
+}
+.campo{
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px;
+    width:30%;
+    
+}
+
+label{
+    font-style: italic;
+}
+
+.botao{
+    background: #21FF23;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px;
+    width:10%;
+}
+#documento {
+    border-radius: 1px;
+}
