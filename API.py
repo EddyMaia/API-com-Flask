@@ -1,4 +1,4 @@
-from flask import Flask, render_template,url_for,request,flash
+from flask import Flask, render_template,url_for,request
 import os
 import pymongo
 
@@ -17,7 +17,7 @@ def cadastro():
 @app.route("/CadastroRealizado", methods=['GET','POST'])
 def CadastroRealizado():
     if request.method == 'POST':
-        diretorio= "C:\\Users\\edmar\\Meus_codigos\\arquivos"
+        diretorio= "C:\\Users\\edmar\\Meus_codigos\\API\\arquivos"
         conexao = pymongo.MongoClient("localhost",27017)
         db=conexao.api
         colecao=db.cadastro
@@ -27,12 +27,13 @@ def CadastroRealizado():
         _id=colecao.insert_one(formulario).inserted_id
         _id=str(_id)
         arquivo=request.files.get("documento")
+        #salva o arquivo com o ID da inclusão em seu nome.
         nomeFile = str(arquivo.filename)
         nomeFile = str(_id + nomeFile)
         arquivo.save(os.path.join(diretorio,nomeFile))
-        #arquivo= request.files['documento']'''
-        return request.form
-    return 'ok'
+        return render_template("CadastroRealizado.html")
+    
+    return render_template("pagina.html")
 
 @app.route("/pagina.html",methods=['GET', 'POST'])
 def retorno_pagina_inicial():
@@ -41,3 +42,4 @@ def retorno_pagina_inicial():
 #colocar site no ar
 if __name__ == "__main__":
     app.run(debug=False)
+
