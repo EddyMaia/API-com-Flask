@@ -41,5 +41,5 @@ def retorno_pagina_inicial():
 
 #colocar site no ar
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=True)
 
